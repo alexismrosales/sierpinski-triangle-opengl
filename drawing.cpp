@@ -17,21 +17,22 @@ void triangle_reflection()
 //Getting middle points of vertex and drawing recursively
 void points_division(vector<float>&p1, vector<float>&p2, vector<float>&p3, int depth)
 {   
+    vector<float> aux_vector1, aux_vector2;
     //Base case
     if(depth >= limit_depth) 
         return;
     draw_triangle(p1,p2,p3);
     //Auxiliar vector variables to get middle points
-    vector<float> aux_vector1 = {(p1[0]+p2[0])/2, (p1[1]+p2[1])/2};
-    vector<float> aux_vector2 = {(p1[0]+p3[0])/2, (p1[1]+p3[1])/2};
+    aux_vector1 = {(p1[0]+p2[0])/2, (p1[1]+p2[1])/2};
+    aux_vector2 = {(p1[0]+p3[0])/2, (p1[1]+p3[1])/2};
     //Recursive call
     points_division(p1,aux_vector1,aux_vector2,depth+1);
-    vector<float> aux_vector3 = {(p2[0]+p3[0])/2, (p2[1]+p3[1])/2};
-    vector<float> aux_vector4 = {(p2[0]+p1[0])/2, (p2[1]+p1[1])/2};
-    points_division(p2,aux_vector3,aux_vector4,depth+1);
-    vector<float> aux_vector5 = {(p3[0]+p2[0])/2, (p3[1]+p2[1])/2};
-    vector<float> aux_vector6 = {(p3[0]+p1[0])/2, (p3[1]+p1[1])/2};
-    points_division(p3,aux_vector5,aux_vector6,depth+1);
+    aux_vector1 = {(p2[0]+p3[0])/2, (p2[1]+p3[1])/2};
+    aux_vector2 = {(p2[0]+p1[0])/2, (p2[1]+p1[1])/2};
+    points_division(p2,aux_vector1,aux_vector2,depth+1);
+    aux_vector1 = {(p3[0]+p2[0])/2, (p3[1]+p2[1])/2};
+    aux_vector2 = {(p3[0]+p1[0])/2, (p3[1]+p1[1])/2};
+    points_division(p3,aux_vector1,aux_vector2,depth+1);
 }
 //Draws a single triangle with random color edges
 void draw_triangle(vector<float>&p1, vector<float>&p2, vector<float>&p3)
