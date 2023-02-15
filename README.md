@@ -1,6 +1,6 @@
 # sierpinski-triangle-opengl
 
-Basic drawing of sierpinski triangle in c++ with OpenGl free library.
+Basic drawing of sierpinski triangle in c++ with OpenGL free library.
 
 ## Compilation
 
