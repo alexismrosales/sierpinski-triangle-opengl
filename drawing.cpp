@@ -33,7 +33,7 @@ void points_division(vector<float>&p1, vector<float>&p2, vector<float>&p3, int d
     vector<float> aux_vector6 = {(p3[0]+p1[0])/2, (p3[1]+p1[1])/2};
     points_division(p3,aux_vector5,aux_vector6,depth+1);
 }
-//Draws a single triangle with random edges
+//Draws a single triangle with random color edges
 void draw_triangle(vector<float>&p1, vector<float>&p2, vector<float>&p3)
 {
     //Generating random seed
